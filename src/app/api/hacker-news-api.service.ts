@@ -28,6 +28,10 @@ export class HackerNewsApiService {
     return this.httpClient.get(`${this.baseUrl}/item/${id}`);
   }
 
+  fetchUser(id: string): Observable<any> {
+    return this.httpClient.get(`${this.baseUrl}/user/${id}`);
+  }
+
   /**
    * Handle Http operation that failed.
    * Let the app continue.
