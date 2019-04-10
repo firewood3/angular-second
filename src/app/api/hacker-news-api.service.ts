@@ -14,20 +14,6 @@ export class HackerNewsApiService {
     this.baseUrl = 'https://node-hnapi.herokuapp.com';
   }
 
-  // fetchStories(): Observable<any> {
-  //   return this
-  //     .httpClient
-  //     .get(`${this.baseUrl}/topstories.json`)
-  //     .pipe(
-  //       tap(_ => console.log(_)),
-  //       catchError(this.handleError<any>('getHeroes', []))
-  //     );
-  // }
-  //
-  // fetchItem(id: number): Observable<any> {
-  //   return this.httpClient.get(`${this.baseUrl}/item/${id}.json`);
-  // }
-
   fetchStories(storyType: string, page: number): Observable<any> {
     return this
       .httpClient
@@ -36,6 +22,10 @@ export class HackerNewsApiService {
         tap(source => console.log(source)),
         catchError(this.handleError<any>('fetchStories', []))
       );
+  }
+
+  fetchComments(id: number): Observable<any> {
+    return this.httpClient.get(`${this.baseUrl}/item/${id}`);
   }
 
   /**

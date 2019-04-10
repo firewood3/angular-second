@@ -11,6 +11,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {DomainPipe} from './pipes/domain.pipe';
 import { ItemCommentsComponent } from './item-comments/item-comments.component';
 import { AppRoutesModule } from './app-routes.module';
+import { CommentTreeComponent } from './comment-tree/comment-tree.component';
+import { CommentComponent } from './comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { AppRoutesModule } from './app-routes.module';
     FooterComponent,
     ItemComponent,
     DomainPipe,
-    ItemCommentsComponent
+    ItemCommentsComponent,
+    CommentTreeComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
