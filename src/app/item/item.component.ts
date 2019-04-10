@@ -7,19 +7,10 @@ import {HackerNewsApiService} from '../api/hacker-news-api.service';
   styleUrls: ['./item.component.scss']
 })
 export class ItemComponent implements OnInit {
+  @Input() item;
 
-  @Input() itemId: number;
-  item;
+  constructor() { }
 
-  constructor(private hackerNewsAPIService: HackerNewsApiService) { }
-
-  ngOnInit() {
-    this
-      .hackerNewsAPIService
-      .fetchItem(this.itemId)
-      .subscribe(value => {
-        this.item = value;
-      }, error => console.log('Could not load item : ' + this.itemId));
-  }
+  ngOnInit() {}
 
 }

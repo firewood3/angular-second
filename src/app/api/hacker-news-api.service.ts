@@ -11,21 +11,31 @@ export class HackerNewsApiService {
   baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = 'https://hacker-news.firebaseio.com/v0';
+    this.baseUrl = 'https://node-hnapi.herokuapp.com';
   }
 
-  fetchStories(): Observable<any> {
+  // fetchStories(): Observable<any> {
+  //   return this
+  //     .httpClient
+  //     .get(`${this.baseUrl}/topstories.json`)
+  //     .pipe(
+  //       tap(_ => console.log(_)),
+  //       catchError(this.handleError<any>('getHeroes', []))
+  //     );
+  // }
+  //
+  // fetchItem(id: number): Observable<any> {
+  //   return this.httpClient.get(`${this.baseUrl}/item/${id}.json`);
+  // }
+
+  fetchStories(storyType: string, page: number): Observable<any> {
     return this
       .httpClient
-      .get(`${this.baseUrl}/topstories.json`)
+      .get(`${this.baseUrl}/${storyType}?page=${page}`)
       .pipe(
-        tap(_ => console.log(_)),
-        catchError(this.handleError<any>('getHeroes', []))
+        tap(source => console.log(source)),
+        catchError(this.handleError<any>('fetchStories', []))
       );
-  }
-
-  fetchItem(id: number): Observable<any> {
-    return this.httpClient.get(`${this.baseUrl}/item/${id}.json`);
   }
 
   /**

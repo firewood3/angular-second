@@ -1,16 +1,19 @@
 <!-- stories.component.html -->
 
-<div class="main-content">
+<div class="loading-section" *ngIf="!items">
+  <!-- You can add a loading indicator here if you want to :) -->
+</div>
+<div *ngIf="items">
   <ol>
-    <li *ngFor="let item of items | slice:0:30" class="post">
-      <app-item class="item-block" [itemId]="item"></app-item>
+    <li *ngFor="let item of items" class="post">
+      <app-item class="item-block" [item]="item"></app-item>
     </li>
   </ol>
   <div class="nav">
-    <a href="" class="prev">
+    <a class="prev">
       ‹ Prev
     </a>
-    <a href="" class="more">
+    <a class="more">
       More ›
     </a>
   </div>
