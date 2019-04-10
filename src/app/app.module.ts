@@ -9,6 +9,8 @@ import { ItemComponent } from './item/item.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {DomainPipe} from './pipes/domain.pipe';
+import { ItemCommentsComponent } from './item-comments/item-comments.component';
+import { AppRoutesModule } from './app-routes.module';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import {DomainPipe} from './pipes/domain.pipe';
     StoriesComponent,
     FooterComponent,
     ItemComponent,
-    DomainPipe
+    DomainPipe,
+    ItemCommentsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
