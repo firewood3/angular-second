@@ -181,7 +181,6 @@ ng g c new-component --module app
 4. user 컴포넌트는 oninit하면서 API 함수를 호출해준다.
  
 
-
 # MyHackerNews
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
