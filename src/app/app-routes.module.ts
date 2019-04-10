@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {ItemCommentsComponent} from './item-comments/item-comments.component';
 import {StoriesComponent} from './stories/stories.component';
+import {UserComponent} from './user/user.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'news/1', pathMatch : 'full'},
@@ -10,7 +11,8 @@ const routes: Routes = [
   {path: 'show/:page', component: StoriesComponent, data: {storiesType: 'show'}},
   {path: 'ask/:page', component: StoriesComponent, data: {storiesType: 'ask'}},
   {path: 'jobs/:page', component: StoriesComponent, data: {storiesType: 'jobs'}},
-  {path: 'item/:id', component: ItemCommentsComponent}
+  {path: 'item/:id', component: ItemCommentsComponent},
+  {path: 'user/:id', component: UserComponent}
 ];
 
 @NgModule({
