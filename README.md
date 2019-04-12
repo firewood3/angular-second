@@ -1,7 +1,13 @@
+# Angular
+- 컴포넌트: 페이지를 표현할 수 있는 부품
+- 서비스: 페이지를 표시할 수 없고 비즈니스 로직만 가지고 있는 주입 가능한 부품. (데이터를 호출할때 많이 쓰임)
+- 라우터: 컴포넌트의 전환을 가능하게 하는 모듈
+- HTTPClient: RxJS로 데이터를 가지고 오기 위한 모듈
+
 # Origin
  - https://houssein.me/angular2-hacker-news
  - https://github.com/housseindjirdeh/angular2-hn
- 
+
 # Hacker News
 
 이 글에서 해커 뉴스를 제작할 것이다.
